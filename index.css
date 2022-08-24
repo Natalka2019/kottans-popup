@@ -6,6 +6,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   height: 100vh;
   display: flex;
@@ -41,7 +45,8 @@ body {
   grid-gap: 10px;
 }
 
-.header__nav__list__item__link {
+.header__nav__list__item__link,
+.nav__checkbox__label {
   display: block;
   width: 100%;
   height: 100%;
@@ -58,14 +63,38 @@ body {
   outline: transparent;
 }
 
+.nav__checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  /* ALTERNATIVE VARIANT */
+  /* -webkit-appearance: none; */
+}
+
+.nav__checkbox__label:hover,
+.nav__checkbox__input:checked + .nav__checkbox__label,
+.nav__checkbox__input:focus + .nav__checkbox__label,
+.nav__checkbox__input:focus:checked + .nav__checkbox__label {
+  border: 2px solid royalblue;
+  padding: 3px;
+  border-radius: 10px;
+  outline: transparent;
+}
+
+.nav__checkbox__input:checked ~ .popup {
+  visibility: visible;
+}
+
 .title {
-  text-decoration: none;
   line-height: 35px;
   font-weight: 800;
   color: #757575;
 }
 
-.popup-button,
+.nav__checkbox__image,
 .bell {
   width: 100%;
   height: 100%;
@@ -76,4 +105,64 @@ body {
   height: 100%;
   border-radius: 50%;
   border: 1px solid silver;
+}
+
+.popup {
+  position: absolute;
+  width: 280px;
+  top: 80px;
+  right: 50px;
+  margin-left: auto;
+  border: 1px solid rgb(211, 210, 210);
+  box-shadow: 3px 3px 10px -3px #999, 3px 3px 10px -3px #999,
+    -3px 3px 10px -3px #999;
+
+  visibility: hidden;
+}
+
+.menu {
+  padding: 20px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  column-gap: 20px;
+  grid-row-gap: 15px;
+
+  /* background-color: thistle; */
+}
+
+.menu__item {
+  font-size: 14px;
+
+  /* background-color: yellowgreen; */
+}
+
+.menu__item__link {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  /* background-color: orchid; */
+}
+
+.menu__item__image {
+  width: 40px;
+  width: 40px;
+
+  /* background-color: turquoise; */
+}
+
+.menu__item__title {
+  color: grey;
+
+  /* background-color: yellow; */
+}
+
+.button__more {
+  grid-column-start: 1;
+  grid-column-end: 4;
+
+  /* background-color: springgreen; */
 }
