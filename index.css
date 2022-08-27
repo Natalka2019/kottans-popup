@@ -112,10 +112,10 @@ a {
 
 .popup {
   position: absolute;
-  width: 320px;
+  width: 300px;
   height: 440px;
   top: 90px;
-  right: 50px;
+  right: 10px;
   margin-left: auto;
   border: 1px solid rgb(211, 210, 210);
   box-shadow: 3px 3px 10px -3px #999, 3px 3px 10px -3px #999,
@@ -139,7 +139,7 @@ a {
 }
 
 .menu {
-  padding: 20px 20px 9px 20px;
+  padding: 20px 10px 9px 10px;
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 80px);
@@ -222,15 +222,15 @@ a {
 }
 
 .more__checkbox__input:checked ~ .additional {
-  visibility: visible;
+  display: grid;
 }
 
 .more__checkbox__input:checked ~ .kottans__link {
-  visibility: visible;
+  display: flex;
 }
 
 .additional {
-  visibility: hidden;
+  display: none;
 }
 
 .horizontalLine {
@@ -245,5 +245,16 @@ a {
   line-height: 20px;
   margin-bottom: 20px;
   color: grey;
-  visibility: hidden;
+  display: none;
+}
+
+@media (min-width: 425px) {
+  .popup {
+    width: 320px;
+    right: 50px;
+  }
+
+  .menu {
+    padding: 20px 20px 9px 20px;
+  }
 }
